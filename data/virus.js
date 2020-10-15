@@ -1,9 +1,10 @@
 const fetch = require('node-fetch');
+const dotenv = require('dotenv').config();// Habilita el acceso a las variables de retorno
 
 async function getTotals(){
     const option = {
         headers: {
-            "x-rapidapi-key": "b4bebccef7mshf826d0d0f5150fbp1472ccjsn9d06f25ea500"
+            "x-rapidapi-key": process.env.KEYRAPIDAPI
         }
     };
     let data = await fetch("https://covid-19-data.p.rapidapi.com/totals", option);
